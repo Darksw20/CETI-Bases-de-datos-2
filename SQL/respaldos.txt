@@ -1,0 +1,37 @@
+MariaDB [ceti]> begin;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [ceti]> insert into municipio(ID_Municipio, Nombre)Values(6,"Chapala");
+Query OK, 1 row affected (0.01 sec)
+
+MariaDB [ceti]> Rollback;
+Query OK, 0 rows affected (0.04 sec)
+
+MariaDB [ceti]> begin;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [ceti]> insert into municipio(ID_Municipio, Nombre)Values(6,"Chapala");
+Query OK, 1 row affected (0.02 sec)
+
+MariaDB [ceti]> commit;
+Query OK, 0 rows affected (0.06 sec)
+
+
+
+
+------------------------------
+C:\Users\Ricardo>cd..
+
+C:\Users>cd..
+
+C:\>mkdir prueba
+Ya existe el subdirectorio o el archivo prueba.
+
+C:\>mkdir prueba2
+
+C:\>cd c:/xampp/mysql/bin
+
+c:\xampp\mysql\bin>mysqldump -u root ceti > c:/prueba2/respaldo.sql
+
+c:\xampp\mysql\bin>
+--------------------------------

@@ -1,0 +1,146 @@
+EJEMPLO UNO.php
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Formularios
+	</title>
+</head>
+<body>
+	<form action="dos.php" method="POST">
+		Edad: <INPUT TYPE="text" NAME="edad">
+		<input type="submit" name="aceptar">
+	</form>
+</body>
+</html>
+
+dos.php
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Dos
+	</title>
+</head>
+<body>
+	<?php
+		$edad=$_REQUEST['edad'];
+		print("La edad es: $edad");
+	?>
+</body>
+</html>
+
+TEXT UNO.php
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Formularios
+	</title>
+</head>
+<body>
+	<form action="dos.php" method="POST">
+		Introduzca la cadena a buscar: <INPUT TYPE="text" NAME="cadena" value="valor por defecto" size="20">
+		<?php
+		?>
+	</form>
+</body>
+</html>
+
+dos.php
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Dos
+	</title>
+</head>
+<body>
+	<?php
+		$cadena=$_REQUEST['cadena'];
+		print($cadena);
+	?>
+</body>
+</html>
+
+
+RADIO uno.php
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Formularios
+	</title>
+</head>
+<body>
+	<form action="dos.php" method="POST">
+		Sexo: <input type="radio" name="sexo" value="M" checked>Mujer
+		<input type="radio" name="sexo" value="H">Hombre
+	<input type="submit" name="aceptar">
+	</form>
+</body>
+</html>
+
+dos.php
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Dos
+	</title>
+</head>
+<body>
+	<?php
+		$sexo=$_REQUEST['sexo'];
+		print($sexo);
+	?>
+</body>
+</html>
+
+
+CHECKBOX Uno.php
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Formularios
+	</title>
+</head>
+<body>
+	<form action="dos.php" method="POST">
+		
+		<input type="checkbox" name="extras[]" value="garaje" checked>Garaje
+		<input type="checkbox" name="extras[]" value="piscina">Piscina
+		<input type="checkbox" name="extras[]" value="jardin">Jardin
+
+	<input type="submit" name="aceptar">
+	</form>
+</body>
+</html>
+
+dos.php
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Dos
+	</title>
+</head>
+<body>
+	<?php
+		$extras=$_REQUEST['extras'];
+		foreach ($extras as $extra)
+			print("$extra<BR>\n");
+	?>
+</body>
+</html>
+
+

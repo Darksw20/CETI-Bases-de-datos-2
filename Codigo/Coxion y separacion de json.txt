@@ -1,0 +1,24 @@
+  String v1 = cuenta.getText().toString();
+            String v2 = contraseña.getText().toString();
+            RequestQueue Objeto = Volley.newRequestQueue(this);
+            String Direccion = "http://192.168.100.10/AgentNotes/Login.php?correo="+v1+"&pass="+v2;
+            StringRequest Busca = new StringRequest(Request.Method.GET,Direccion, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                String correo = "",nombre ="",ape_p="",ape_m="";
+                    try {
+                        JSONArray jsonarray = new JSONArray(response);
+
+                        for (int i=0;i<jsonarray.length();i++){         //obtengo los valores del response de volley
+                            JSONObject obj = jsonarray.getJSONObject(i);  //convierto de json a string separadas
+                             correo = obj.getString("Correo");
+                             nombre = obj.getString("Nombre");
+                             ape_p = obj.getString("Ape_P");
+                             ape_m = obj.getString("Ape_M");
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                if (correo.equals("Usuario no existente")){ //Aviso al usuario que su inicio de sesion fue erroneo
+                    Toast SesionError = Toast.makeText(Contexto,"Usuario o Contraseña erroneas",Toast.LENGTH_SHORT);
+                    SesionError.show();

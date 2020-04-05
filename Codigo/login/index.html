@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<style type="text/css">
+	*{
+		background-color:#454545;
+		color:#fff;
+		font-size:12px;
+		font-family:Century Gothic;
+	}
+	input{
+		width:20%;
+		margin:5px;
+		padding:5px;
+		border-radius:15px;
+		background-color:rgba(80,80,80,.6);
+		font-size:1.2rem;
+		border:none;
+	}
+	label{
+		font-size:1.5rem;
+	}
+	input:hover, input:focus{
+		background-color:rgba(107,107,107,.9);
+		-webkit-transition: all 1.5s;
+		-moz-transition: all 1.5s;
+		-ms-transition: all 1.5s;
+		-o-transition: all 1.5s;
+		transition: all 1.5s;
+		outline:none;
+	}
+	#enter{
+		width:10%;
+		-webkit-transition: all .5s;
+		-moz-transition: all .5s;
+		-ms-transition: all .5s;
+		-o-transition: all .5s;
+		transition: all .5s;
+		cursor:pointer;
+	}
+	.f{
+		margin:15% auto;
+		text-align:center;
+	}
+	</style>
+</head>
+<body>
+	<div class="f">
+		<form action="procesaLogin.php" method="post" />
+			<input type="text" placeholder="E-mail" name="email" /><br />
+			<input type="password" placeholder="Contraseña" name="pass" />
+			<br />
+			<br />
+			<input type="submit" id="enter" name="enter" value="Entrar" />
+		</form>
+	</div>
+	<?php
+		require('config.php');
+		
+		$consulta = "SELECT * FROM prueba_2 WHERE email='$email' and pass = '$pass'";
+			echo $consulta;
+	?>
+	</body>
+</html>

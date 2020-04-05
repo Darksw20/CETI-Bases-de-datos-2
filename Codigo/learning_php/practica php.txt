@@ -1,0 +1,329 @@
+Ejemplo:
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Mi primer programa en PHP
+	</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<?PHP 
+		print("<p>Hola mundo<p>");
+	?>
+</body>
+</html>
+
+Uso de \n para generar codigo HTML legible
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Mi primer programa en PHP
+	</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<?PHP 
+		print("<p>Párrafo 1</p>\n");
+		print("<p>Párrafo 2</p>\n");
+	?>
+</body>
+</html>
+
+EJEMPLO DE VARIABLES VARIABLES: PAGINA INTERNACIONALIZADA (1)
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Mi primer programa en PHP
+	</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<?PHP 
+	$mensaje_es="Hola";
+	$mensaje_en="Hello";
+	$idioma="es";
+	$mensaje="mensaje_".$idioma;
+	print $$mensaje;
+	?>
+</body>
+</html>
+
+EJEMPLO DE VARIABLES VARIABLES: PAGINA INTERNACIONALIZADA (2)
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Mi primer programa en PHP
+	</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<?PHP 
+	$mensaje_es="Hola";
+	$mensaje_en="Hello";
+	$idioma="en";
+	$mensaje="mensaje_".$idioma;
+	print $$mensaje;
+	?>
+</body>
+</html>
+
+
+USO DE ESTRUCTURA IF-ELSE
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Mi primer programa en PHP
+	</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<?PHP 
+	$sexo="H";
+	$nombre= "Ricardo";
+
+	if($sexo=='M')
+	{
+		$saludo= "Bienvenida, ";
+	}
+	else
+	{
+		$saludo="Bienvenido, ";
+	}
+	$saludo = $saludo.$nombre;
+	print($saludo);
+	?>
+</body>
+</html>
+
+ESTRUCTURA SELECTIVA SWITCH
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Mi primer programa en PHP
+	</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<?PHP 
+	$extension="ai";
+	switch ($extension)
+	{
+		case 'PDF':
+			$tipo="Documento Adobe PDF";
+			break;
+		case ("TXT"):
+			$tipo ="Documento de Texto";
+		break;
+		case 'HTML':
+		case ("HTM"):
+			$tipo="Documento HTML";
+		break;
+		default:
+			$tipo="Archivo ".$extension;
+			break;
+	}
+	print($tipo);
+	?>
+</body>
+</html>
+
+EJEMPLO ESTRUCTURA WHILE
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Mi primer programa en PHP
+	</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<?PHP 
+	print ("<UL>\n");
+	$i=1;
+	while($i<=5)
+	{
+		print ("<LI>Elemento $i </LI>\n");
+		$i++;
+	}
+	print ("</UL>\n");
+	?>
+</body>
+</html>
+
+EJEMPLO ESTRUCTURA FOR
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Mi primer programa en PHP
+	</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<?PHP 
+		funcion
+	?>
+</body>
+</html>
+
+EJEMPLO FUNCIONES
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Mi primer programa en PHP
+	</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<?PHP 
+		$a=1;
+		$b=2;
+		$c=suma ($a, $b);
+		print $c;
+
+		function suma ($x,$y)
+		{
+			$s=$x+$y;
+			return $s;
+		}
+	?>
+</body>
+</html>
+
+FUNCION PASO POR REFERENCIA
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Mi primer programa en PHP
+	</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<?PHP 
+	function incrementa(&$a)
+	{
+		$a=$a+1;
+	}
+
+		$a=1;
+		incrementa($a);
+		print $a;
+	?>
+</body>
+</html>
+
+
+ARGUMENTOS POR DEFECTO
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Mi primer programa en PHP
+	</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<?PHP 
+		function muestranombre($titulo="Sr.")
+		{
+			print "Estimado $titulo: \n";
+		}
+		muestranombre();
+		muestranombre("Prof.");
+	?>
+</body>
+</html>
+
+ARGUMENTOS POR DEFECTO
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Mi primer programa en PHP
+	</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<?PHP 
+		function muestranombre($nombre, $titulo="Sr.")
+		{
+			print "Estimado $titulo $nombre: \n";
+		}
+		muestranombre("Fernández");
+		muestranombre("Fernández", "Prof.");
+	?>
+</body>
+</html>
+
+
+ESTRUCTURA FOREACH
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Mi primer programa en PHP
+	</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<?PHP 
+
+		$color=array ('rojo'=>101, 'verde'=>51, 'azul'=>255);
+		$medidas= array (10,25,15);
+		foreach ($color as $valor)
+		{
+			print "Valor: $valor<BR>\n";
+		}
+		foreach($color as $clave => $valor)
+		{
+			print "Clave: $clave; Valor: $valor<BR>\n";
+		}
+	?>
+</body>
+</html>
